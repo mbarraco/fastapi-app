@@ -1,0 +1,127 @@
+{
+	"info": {
+		"_postman_id": "e7429ebe-f530-4a75-be83-4dc7baae4613",
+		"name": "fastapi-app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10339447"
+	},
+	"item": [
+		{
+			"name": "Task Create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"string\",\n  \"owner_id\": \"ccb8a78c-516f-45a2-890a-1f2281a84e33\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8079/api/v1/tasks/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8079",
+					"path": [
+						"api",
+						"v1",
+						"tasks",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"string\",\n  \"owner_id\": \"ccb8a78c-516f-45a2-890a-1f2281a84e33\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8079/api/v1/tasks/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8079",
+					"path": [
+						"api",
+						"v1",
+						"tasks",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Task Get",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Task Get by ID",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Task Update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"task_id\": \"53105f2d-efc1-4261-9fdb-28bd2be6f2ba\",\n  \"title\": \"Updated Task\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8079/api/v1/tasks/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8079",
+					"path": [
+						"api",
+						"v1",
+						"tasks",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

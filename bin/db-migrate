@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+function usage() {
+    echo "Manage alembic db migrations
+
+Usage:
+  db-migrate [<args>]
+
+Available Commands:
+  migrations    Generate scripts for new db versions. Requires a revision description.
+"
+}
+
+if [ -z ${1+x} ]; then
+    usage
+    exit 0
+fi
+
+ docker compose run --rm app /bin/bash -c "alembic revision --autogenerate -m '$1'"
+ 
+ 
