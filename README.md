@@ -1,6 +1,6 @@
 # Tasks API
 
-An API for managing Tasks and Users. 
+An API for managing Tasks (and creating Users). 
 
 This project runs on [FastAPI](https://fastapi.tiangolo.com/) + [Sqlaclhemy](https://www.sqlalchemy.org/) + [Alembic](https://alembic.sqlalchemy.org/en/latest/)
 
@@ -8,7 +8,7 @@ This project runs on [FastAPI](https://fastapi.tiangolo.com/) + [Sqlaclhemy](htt
 ## Requirements
 
 * Unix-like OS
-* Docker (docker-compose)
+* Docker (please check [docker-compose.yml](docker-compose.yml) version)
 
 ## Port usage 
 (see [docker-compose.yml](docker-compose.yml))
@@ -36,6 +36,7 @@ Integration tests are provided, run with:
 
 `make tests-run`
 
+Tests will run on a dedicated `docker-compose` service.
 
 ## Future work
 

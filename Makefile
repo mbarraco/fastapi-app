@@ -17,7 +17,7 @@ shell:
 	docker-compose run --rm app /bin/bash
 
 start:
-	docker-compose up -d
+	docker-compose up -d db app
 
 tests-run:
 	docker-compose run --rm app-tests

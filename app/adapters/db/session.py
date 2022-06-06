@@ -17,4 +17,4 @@ def db_session() -> AsyncSession:
     engine = create_async_engine(DB_URL)
     return sessionmaker(
         bind=engine, expire_on_commit=False, class_=AsyncSession
-    )
+    )()
