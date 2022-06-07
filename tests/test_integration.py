@@ -1,13 +1,9 @@
-from asyncio import tasks
-
 from fastapi.testclient import TestClient
 from sqlalchemy.ext.asyncio import AsyncSession, create_async_engine
 from sqlalchemy.orm import sessionmaker
 
-from app.adapters.db.orm import Base
-from app.adapters.db.session import db_session, get_engine
+from app.adapters.db.session import db_session
 from app.api.main import app
-from app.domain.models import Task, User
 
 SQLALCHEMY_DATABASE_URL_TEST = (
     "postgresql+asyncpg://postgres:app@db:5432/testdb"
