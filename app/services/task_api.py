@@ -25,6 +25,15 @@ async def task_retrieve_all(session: AsyncSession) -> List[TaskSchema]:
     return [TaskSchema.from_model(m) for m in models]
 
 
+async def task_retrieve_by_completion(
+    session: AsyncSession, completed: bool
+) -> List[TaskSchema]:
+    models = await TaskRepository.get_by_id_and_completion(
+        session, completed=completed
+    )
+    return [TaskSchema.from_model(m) for m in models]
+
+
 async def task_update(
     session: AsyncSession, cmd: TaskUpdate
 ) -> Optional[TaskSchema]:

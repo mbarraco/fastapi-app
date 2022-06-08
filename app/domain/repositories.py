@@ -32,11 +32,22 @@ class Repository(Generic[ModelT]):
         return res.scalars().all()
 
     @classmethod
-    async def get_by_ids(
-        cls, session: AsyncSession, ids: Iterable[UUID]
+    async def get_by_id_and_completion(
+        cls,
+        session: AsyncSession,
+        _id: Optional[UUID] = None,
+        completed: Optional[bool] = None,
     ) -> Optional[ModelT]:
         items: List[ModelT] = []
-        stmt = select(cls.model).where(cls.model.id.in_(ids))
+        stmt = select(cls.model)
+        if _id is not None and completed is not None:
+            stmt = stmt.where(
+                cls.model.id == _id, cls.model.completed == completed
+            )
+        elif _id is not None:
+            stmt = stmt.where(cls.model.id == _id)
+        else:
+            stmt = stmt.where(cls.model.completed == completed)
         res = await session.execute(stmt)
         items = res.scalars().all()
         return items

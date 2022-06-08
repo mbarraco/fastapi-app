@@ -38,3 +38,11 @@ class TaskCollectionSchema(BaseModel):
 
     class Config:
         arbitrary_types_allowed = True
+
+
+class TaskCollectionSplittedSchema(BaseModel):
+    completed_tasks: Sequence[TaskSchema]
+    incompleted_tasks: Sequence[TaskSchema]
+
+    class Config:
+        arbitrary_types_allowed = True
